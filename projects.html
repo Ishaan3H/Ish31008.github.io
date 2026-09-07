@@ -28,28 +28,39 @@
   <h2>What I'm building</h2>
 
   <div class="project-card">
-    <span class="project-status status-active">Active</span>
-    <h3>This website</h3>
-    <p class="project-desc">Building my personal portfolio from scratch, currently learning HTML, CSS, JavaScript, and Ruby through The Odin Project curriculum &mdash; working toward being able to build full, functional web projects independently.</p>
+    <span class="project-status status-active">Shipped</span>
+    <h3>Dynamic Island for macOS &mdash; Native Swift Desktop Application</h3>
+    <p class="project-desc">A native macOS Dynamic Island in Swift (AppKit and SwiftUI, SwiftPM, no Xcode required) that lives in the notch. It shows Spotify's now playing off the app's own broadcast instead of polling, holds a drag-and-drop staging vault, mirrors a real folder on disk through FSEvents so there is never a second copy of the state, and runs an on-device voice assistant that creates calendar events from natural speech or opens an Obsidian vault &mdash; all processed on device.</p>
+    <p class="project-desc">The part I'm most proud of is chasing down a real performance problem. The first version invalidated the entire view tree on every filesystem event, and thumbnails were decoded at full size synchronously on the main thread. I rewrote the observation graph so each view only subscribes to what it reads, moved thumbnail decoding off the main thread with proper downsizing, and pushed file I/O onto background queues &mdash; median CPU under sustained filesystem churn dropped from about 15% to about 4%, roughly 3.7x. The same benchmark later caught a regression where a debounce change that looked like a clean win had silently broken the file listener.</p>
+    <a href="https://github.com/Ishaan3H/dynamic-island-macos" target="_blank" rel="noopener" class="research-link">GitHub &rarr;</a>
+  </div>
+
+  <div class="project-card">
+    <span class="project-status status-active">Shipped</span>
+    <h3>Market-Making Simulator &mdash; Quantitative Finance &amp; Market Microstructure</h3>
+    <p class="project-desc">A Python limit order book simulator built to study market-making, inventory risk, adverse selection and execution. Implements four market-making strategies &mdash; including Avellaneda&ndash;Stoikov and GLFT &mdash; and calibrates fill intensity from simulated order flow rather than assuming model parameters. Multi-regime experiments compare PnL, drawdown, inventory, markout and risk-adjusted returns, with 80 tests covering order-book mechanics, accounting, calibration and closed-form quoting formulas.</p>
+    <a href="https://github.com/Ishaan3H/avellaneda-stoikov-sim" target="_blank" rel="noopener" class="research-link">GitHub &rarr;</a>
+  </div>
+
+  <div class="project-card">
+    <span class="project-status status-active">Shipped</span>
+    <h3>Monte Carlo Quant Lab &mdash; Quantitative Finance &amp; Risk Simulation</h3>
+    <p class="project-desc">A from-scratch Python framework exploring Monte Carlo methods in quantitative finance, covering option pricing, exotic derivatives, variance reduction and portfolio risk. Implements GBM simulations, Asian option pricing, antithetic variates, Cholesky-based correlated simulations, and VaR/CVaR, with results systematically validated against Black&ndash;Scholes and other closed-form solutions. Built with NumPy, SciPy, Matplotlib and Pytest.</p>
+    <a href="https://github.com/Ishaan3H/monte-carlo-quant-lab" target="_blank" rel="noopener" class="research-link">GitHub &rarr;</a>
   </div>
 
   <div class="project-card">
     <span class="project-status status-active">Active</span>
     <h3>Reckon</h3>
-    <p class="project-desc">Developing an advanced screen time monitoring application rooted in behavioral microeconomics and neuroscience, leveraging habit formation mechanics to systematically optimize focus and eliminate digital friction.</p>
+    <p class="project-desc">A screen time monitoring application rooted in behavioural microeconomics and neuroscience, using habit formation mechanics to optimise focus and cut digital friction.</p>
     <a href="https://reckon-theta.vercel.app" target="_blank" rel="noopener" class="research-link">Prototype &rarr;</a>
   </div>
 
   <div class="project-card">
-    <span class="project-status status-planned">Planned</span>
-    <h3>Monte Carlo Simulation and its Applications</h3>
-    <p class="project-desc">An exploration of Monte Carlo methods with a focus on their applications in finance and economics &mdash; including risk modelling, asset pricing, and stochastic forecasting. Aimed at building both theoretical understanding and a working implementation.</p>
-  </div>
-
-  <div class="project-card">
-    <span class="project-status status-planned">Planned</span>
-    <h3>Black Swan Events &mdash; Research Paper</h3>
-    <p class="project-desc">A research paper on black swan events and their economic consequences, being developed in collaboration with a professor at ISBF. Examining how extreme, low-probability events propagate through financial systems and what frameworks exist &mdash; or fail &mdash; to anticipate them.</p>
+    <span class="project-status status-active">Active</span>
+    <h3>This website</h3>
+    <p class="project-desc">Built from scratch in plain HTML and CSS, no framework and no build step.</p>
+    <a href="https://github.com/Ishaan3H/Ish31008.github.io" target="_blank" rel="noopener" class="research-link">Source &rarr;</a>
   </div>
 
   <div class="page-footer">
