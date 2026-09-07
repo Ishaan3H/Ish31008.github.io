@@ -1,14 +1,22 @@
 :root {
-  --navy: #0d1f35;
-  --navy-light: #152a42;
-  --cream: #f5f0e8;
-  --cream-dim: #d9d2c4;
-  --beige: #c8bfa8;
-  --beige-dim: #8a8070;
-  --text: #ede8df;
-  --text-muted: #9fa8a0;
-  --border: rgba(200,191,168,0.18);
-  --border-hover: rgba(200,191,168,0.4);
+  /* page + card surfaces */
+  --navy: #f8fafc;
+  --navy-light: #ffffff;
+
+  /* headings, in the navy this site used to be painted with */
+  --cream: #0d1f35;
+  --cream-dim: #22405f;
+
+  /* links and accents */
+  --beige: #3d5a7a;
+  --beige-dim: #5f7188;
+
+  /* body copy */
+  --text: #36485e;
+  --text-muted: #4a5c72;
+
+  --border: rgba(13,31,53,0.12);
+  --border-hover: rgba(13,31,53,0.30);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -26,7 +34,7 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(13,31,53,0.97);
+  background: rgba(248,250,252,0.97);
   border-bottom: 1px solid var(--border);
   padding: 0 2.5rem;
   display: flex;
@@ -314,9 +322,9 @@ p { color: var(--text-muted); font-size: 0.93rem; }
   border: 1px solid;
 }
 
-.status-planned { color: var(--beige-dim); border-color: rgba(138,128,112,0.3); }
-.status-active { color: #7ec8a4; border-color: rgba(126,200,164,0.3); }
-.status-done { color: var(--beige-dim); border-color: rgba(138,128,112,0.2); opacity: 0.7; }
+.status-planned { color: var(--beige-dim); border-color: rgba(13,31,53,0.22); }
+.status-active { color: #2f7d5b; border-color: rgba(47,125,91,0.35); }
+.status-done { color: var(--beige-dim); border-color: rgba(13,31,53,0.18); opacity: 0.7; }
 
 .project-card {
   background: var(--navy-light);
@@ -353,15 +361,15 @@ p { color: var(--text-muted); font-size: 0.93rem; }
   width: 38px;
   min-width: 38px;
   height: 56px;
-  background: var(--beige-dim);
-  opacity: 0.65;
+  background: var(--cream);
+  opacity: 0.72;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
 }
 
-.book-spine.current-spine { opacity: 0.85; }
+.book-spine.current-spine { opacity: 1; }
 
 .book-spine-text {
   font-family: 'Courier New', monospace;
@@ -383,7 +391,7 @@ p { color: var(--text-muted); font-size: 0.93rem; }
   margin-bottom: 0.25rem;
 }
 
-.book-status.reading { color: #7ec8a4; }
+.book-status.reading { color: #2f7d5b; }
 .book-status.planned { color: var(--beige-dim); opacity: 0.7; }
 
 .book-title { font-size: 0.94rem; color: var(--cream-dim); margin-bottom: 0.12rem; }
