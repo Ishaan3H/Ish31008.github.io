@@ -2,22 +2,19 @@
 
 Personal site — [ishaanharish.me](https://ishaanharish.me)
 
-Set as a broadsheet newspaper. Six pages, plain static HTML, no build step.
+Plain static HTML, no build step. Six pages linked by ordinary internal links.
 
 ```
-index.html        Page One   — The Front Page
-experience.html   Page Two   — Experience
-awards.html       Page Three — Awards & Honours
-research.html     Page Four  — Research & Writing
-projects.html     Page Five  — The Project Log
-reading.html      Page Six   — The Reading Room
+index.html        Home
+experience.html   Experience
+awards.html       Awards
+research.html     Research
+projects.html     Projects
+reading.html      Reading
 assets/style.css  All styling
-assets/paper.js   Hamburger index + dateline
+assets/nav.js     Mobile nav toggle
 ```
 
-The illustrations are hand-written inline SVG, animated with CSS — the candle
-flickers, the gears turn, a page turns, a book eases off the shelf. All motion
-is switched off under `prefers-reduced-motion`.
-
-To edit a page, open its `.html` file and change the text. To change colours,
-edit the custom properties at the top of `assets/style.css`.
+To edit a page, open its `.html` file and change the text. Colours are custom
+properties at the top of `assets/style.css`. The nav markup is repeated in each
+page's `<nav>` — if you add a page, add the link in all six.

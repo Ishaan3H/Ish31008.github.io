@@ -3,132 +3,62 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Awards & Honours — Ishaan Harish</title>
-<meta name="description" content="Placings, selections, and one journal.">
+<title>Awards — Ishaan Harish</title>
 <link rel="icon" type="image/png" href="images/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<header class="topbar">
-  <button class="burger" id="burger" aria-expanded="false" aria-controls="nav-panel" aria-label="Open index">
+<nav>
+  <a class="nav-logo" href="index.html">Ishaan Harish</a>
+  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
-  <span class="topbar-label">Awards & Honours</span>
-  <a class="topbar-home" href="index.html">&larr;&nbsp;Front&nbsp;Page</a>
-</header>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="awards.html" class="active">Awards</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="reading.html">Reading</a></li>
+  </ul>
+</nav>
 
-<div class="nav-panel" id="nav-panel">
-  <div class="nav-inner">
-    <p class="nav-heading">Index &mdash; In this edition</p>
-    <ul class="nav-list">
-      <li><a href="index.html"><span class="nav-num">Page One</span><span class="nav-title">The Front Page</span><span class="nav-dots"></span><span class="nav-note">The lead story</span></a></li>
-      <li><a href="experience.html"><span class="nav-num">Page Two</span><span class="nav-title">Experience</span><span class="nav-dots"></span><span class="nav-note">Where it happened</span></a></li>
-      <li><a href="awards.html" aria-current="page"><span class="nav-num">Page Three</span><span class="nav-title">Awards & Honours</span><span class="nav-dots"></span><span class="nav-note">For the record</span></a></li>
-      <li><a href="research.html"><span class="nav-num">Page Four</span><span class="nav-title">Research & Writing</span><span class="nav-dots"></span><span class="nav-note">In print</span></a></li>
-      <li><a href="projects.html"><span class="nav-num">Page Five</span><span class="nav-title">The Project Log</span><span class="nav-dots"></span><span class="nav-note">Running &amp; queued</span></a></li>
-      <li><a href="reading.html"><span class="nav-num">Page Six</span><span class="nav-title">The Reading Room</span><span class="nav-dots"></span><span class="nav-note">Currently on the desk</span></a></li>
-    </ul>
+<div class="page-inner">
+  <p class="section-label">// 03. Awards</p>
+  <h2>Honours &amp; recognition</h2>
+  <div class="awards-grid">
+    <div class="award-card">
+      <div class="award-icon">&#127942;</div>
+      <p class="award-title">National Startup Weekend &mdash; 1st Place</p>
+      <p class="award-desc">Master's Union &bull; Nov 2023. First place in a national-level team startup competition.</p>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">&#9992;</div>
+      <p class="award-title">Volatus Celestecon &mdash; 2nd Place</p>
+      <p class="award-desc">Aeross, DPS R.K. Puram &bull; Nov 2024. National aerospace competition.</p>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">&#128221;</div>
+      <p class="award-title">Published in IIM Rohtak &mdash; Top 7/250</p>
+      <p class="award-desc">Finance article selected in Arbitrage journal. Ranked top 7 out of 250 submissions.</p>
+    </div>
+    <div class="award-card">
+      <div class="award-icon">&#127979;</div>
+      <p class="award-title">Boston University &mdash; Selected Top 5/400</p>
+      <p class="award-desc">Nationally selected among top 5 out of 400 applicants for BU Summer School.</p>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <p class="footer-copy">&copy; 2026 Ishaan Harish</p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/ishaan-harish-511b70273/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:ishaanharish3@gmail.com">Email</a>
+      <a href="https://github.com/Ishaan3H" target="_blank" rel="noopener">GitHub</a>
+    </div>
   </div>
 </div>
 
-<main class="wrap">
-  <div class="section-head">
-    <p class="page-num">Page Three</p>
-    <h1>Awards &amp; Honours</h1>
-    <p class="deck">Placings, selections and one journal that took the piece.</p>
-  </div>
-  <div class="rule-double"></div>
-
-  <div class="lead">
-    <div>
-      <div class="grid-2">
-        <div class="notice">
-          <span class="notice-rank">1st Place</span>
-          <h3>National Startup Weekend</h3>
-          <p>First place in a national-level team startup competition.</p>
-          <p class="meta">Master&rsquo;s Union &mdash; Nov 2023</p>
-        </div>
-        <div class="notice">
-          <span class="notice-rank">2nd Place</span>
-          <h3>Volatus Celestecon</h3>
-          <p>Second place at a national aerospace competition.</p>
-          <p class="meta">Aeross, DPS R.K. Puram &mdash; Nov 2024</p>
-        </div>
-        <div class="notice">
-          <span class="notice-rank">Top 7 of 250</span>
-          <h3>Published at IIM Rohtak</h3>
-          <p>Finance article selected for the <em>Arbitrage</em> journal, ranked in the top seven of two hundred and fifty submissions.</p>
-          <p class="meta">IIM Rohtak &mdash; Arbitrage</p>
-        </div>
-        <div class="notice">
-          <span class="notice-rank">Top 5 of 400</span>
-          <h3>Boston University Summer School</h3>
-          <p>Nationally selected among the top five of four hundred applicants.</p>
-          <p class="meta">Boston University</p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <figure class="plate">
-  <div class="plate-frame">
-    <svg class="plate-art" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A trophy in a laurel wreath, catching a slow sweep of light while sparks rise.">
-  <defs><clipPath id="cupclip"><path d="M140 60 h120 v44 a60 60 0 0 1 -120 0 z M186 150 h28 v34 h-28 z M156 184 h88 v16 h-88 z"/></clipPath></defs>
-  <rect width="400" height="260" fill="#e7dcbe"/>
-  <circle cx="200" cy="128" r="104" fill="#efe5c9"/>
-  <g stroke="#2a2418" stroke-width="2" fill="#d3c49b">
-    <path d="M92 196 C58 156 62 100 96 66" fill="none"/>
-    <path d="M308 196 C342 156 338 100 304 66" fill="none"/>
-  </g>
-  <g fill="#c3b28a" stroke="#2a2418" stroke-width="1.2">
-    <ellipse cx="86" cy="176" rx="13" ry="6" transform="rotate(-40 86 176)"/>
-    <ellipse cx="76" cy="150" rx="13" ry="6" transform="rotate(-20 76 150)"/>
-    <ellipse cx="76" cy="122" rx="13" ry="6" transform="rotate(6 76 122)"/>
-    <ellipse cx="86" cy="94"  rx="13" ry="6" transform="rotate(28 86 94)"/>
-    <ellipse cx="104" cy="72" rx="13" ry="6" transform="rotate(48 104 72)"/>
-    <ellipse cx="314" cy="176" rx="13" ry="6" transform="rotate(40 314 176)"/>
-    <ellipse cx="324" cy="150" rx="13" ry="6" transform="rotate(20 324 150)"/>
-    <ellipse cx="324" cy="122" rx="13" ry="6" transform="rotate(-6 324 122)"/>
-    <ellipse cx="314" cy="94"  rx="13" ry="6" transform="rotate(-28 314 94)"/>
-    <ellipse cx="296" cy="72"  rx="13" ry="6" transform="rotate(-48 296 72)"/>
-  </g>
-  <path d="M140 60 h120 v44 a60 60 0 0 1 -120 0 z" fill="#dccca0" stroke="#2a2418" stroke-width="2.4"/>
-  <path d="M140 74 C112 74 112 118 140 118" fill="none" stroke="#2a2418" stroke-width="2.4"/>
-  <path d="M260 74 C288 74 288 118 260 118" fill="none" stroke="#2a2418" stroke-width="2.4"/>
-  <rect x="186" y="150" width="28" height="34" fill="#d3c49b" stroke="#2a2418" stroke-width="2.2"/>
-  <rect x="156" y="184" width="88" height="16" fill="#c3b28a" stroke="#2a2418" stroke-width="2.2"/>
-  <rect x="164" y="200" width="72" height="10" fill="#b8a67c" stroke="#2a2418" stroke-width="2"/>
-  <path d="M200 78 l5 11 12 2 -9 9 2 12 -10 -6 -10 6 2 -12 -9 -9 12 -2 z" fill="#2a2418" opacity="0.35"/>
-  <g clip-path="url(#cupclip)"><rect class="a-glint" x="120" y="40" width="26" height="180" fill="#fff8e2" opacity="0.75" transform="skewX(-18)"/></g>
-  <g fill="#8a7a52">
-    <circle class="a-spark"   cx="132" cy="70" r="3"/>
-    <circle class="a-spark-2" cx="268" cy="78" r="2.4"/>
-    <circle class="a-spark-3" cx="200" cy="52" r="2.8"/>
-  </g>
-</svg>
-    <span class="plate-grain" aria-hidden="true"></span>
-  </div>
-  <figcaption class="plate-caption"><b>For the Record</b> &mdash; Four results worth keeping. The wreath is decorative; the placings are not.</figcaption>
-</figure>
-    </div>
-  </div>
-
-
-<nav class="turn-page"><a href="experience.html">&larr; Experience</a><a href="research.html">Research & Writing &rarr;</a></nav>
-
-  <footer class="colophon">
-    <p>&copy; 2026 Ishaan Harish &mdash; set in New Delhi</p>
-    <nav>
-      <a href="https://www.linkedin.com/in/ishaan-harish-511b70273/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/Ishaan3H" target="_blank" rel="noopener">GitHub</a>
-      <a href="mailto:ishaanharish3@gmail.com">Email</a>
-    </nav>
-  </footer>
-</main>
-
-<script src="assets/paper.js"></script>
+<script src="assets/nav.js"></script>
 </body>
 </html>

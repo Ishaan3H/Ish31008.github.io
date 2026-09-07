@@ -3,119 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Research & Writing — Ishaan Harish</title>
-<meta name="description" content="Published work and work in progress.">
+<title>Research — Ishaan Harish</title>
 <link rel="icon" type="image/png" href="images/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<header class="topbar">
-  <button class="burger" id="burger" aria-expanded="false" aria-controls="nav-panel" aria-label="Open index">
+<nav>
+  <a class="nav-logo" href="index.html">Ishaan Harish</a>
+  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
     <span></span><span></span><span></span>
   </button>
-  <span class="topbar-label">Research & Writing</span>
-  <a class="topbar-home" href="index.html">&larr;&nbsp;Front&nbsp;Page</a>
-</header>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="awards.html">Awards</a></li>
+    <li><a href="research.html" class="active">Research</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="reading.html">Reading</a></li>
+  </ul>
+</nav>
 
-<div class="nav-panel" id="nav-panel">
-  <div class="nav-inner">
-    <p class="nav-heading">Index &mdash; In this edition</p>
-    <ul class="nav-list">
-      <li><a href="index.html"><span class="nav-num">Page One</span><span class="nav-title">The Front Page</span><span class="nav-dots"></span><span class="nav-note">The lead story</span></a></li>
-      <li><a href="experience.html"><span class="nav-num">Page Two</span><span class="nav-title">Experience</span><span class="nav-dots"></span><span class="nav-note">Where it happened</span></a></li>
-      <li><a href="awards.html"><span class="nav-num">Page Three</span><span class="nav-title">Awards & Honours</span><span class="nav-dots"></span><span class="nav-note">For the record</span></a></li>
-      <li><a href="research.html" aria-current="page"><span class="nav-num">Page Four</span><span class="nav-title">Research & Writing</span><span class="nav-dots"></span><span class="nav-note">In print</span></a></li>
-      <li><a href="projects.html"><span class="nav-num">Page Five</span><span class="nav-title">The Project Log</span><span class="nav-dots"></span><span class="nav-note">Running &amp; queued</span></a></li>
-      <li><a href="reading.html"><span class="nav-num">Page Six</span><span class="nav-title">The Reading Room</span><span class="nav-dots"></span><span class="nav-note">Currently on the desk</span></a></li>
-    </ul>
+<div class="page-inner">
+  <p class="section-label">// 04. Research &amp; Writing</p>
+  <h2>Published work</h2>
+
+  <div class="research-card">
+    <p class="research-meta">IIM Rohtak &mdash; Arbitrage Finance Journal &mdash; Top 7 / 250</p>
+    <h3>The Role of Economics in Global Dynamics</h3>
+    <p class="research-desc">An exploration of how economics shapes decisions and societies in a globally connected world. Examines five key mechanisms through which economic forces drive outcomes across policy, behaviour, and institutions.</p>
+  </div>
+
+  <div class="research-card">
+    <p class="research-meta">Edunomix Institute &mdash; Ongoing</p>
+    <h3>Articles on the Indian Economy</h3>
+    <p class="research-desc">Regular writing on macroeconomic trends, policy analysis, and structural shifts in the Indian economy, published through the Edunomix Institute's Indian Chapter.</p>
+    <a href="https://www.linkedin.com/in/ishaan-harish-511b70273/" target="_blank" rel="noopener" class="research-link">View on LinkedIn &rarr;</a>
+  </div>
+
+  <div class="page-footer">
+    <p class="footer-copy">&copy; 2026 Ishaan Harish</p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/ishaan-harish-511b70273/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:ishaanharish3@gmail.com">Email</a>
+      <a href="https://github.com/Ishaan3H" target="_blank" rel="noopener">GitHub</a>
+    </div>
   </div>
 </div>
 
-<main class="wrap">
-  <div class="section-head">
-    <p class="page-num">Page Four</p>
-    <h1>Research &amp; Writing</h1>
-    <p class="deck">One piece in print, and a standing column on the Indian economy.</p>
-  </div>
-  <div class="rule-double"></div>
-
-  <div class="lead">
-    <div>
-      <div class="entry">
-        <div class="entry-date">In print<br>Top 7 / 250</div>
-        <div>
-          <h2>The Role of Economics in Global Dynamics</h2>
-          <p class="entry-org">IIM Rohtak &mdash; Arbitrage Finance Journal</p>
-          <p class="text">An exploration of how economics shapes decisions and societies in a globally connected world. Examines five key mechanisms through which economic forces drive outcomes across policy, behaviour and institutions.</p>
-        </div>
-      </div>
-
-      <div class="entry">
-        <div class="entry-date">Ongoing<br>Column</div>
-        <div>
-          <h2>Articles on the Indian Economy</h2>
-          <p class="entry-org">Edunomix Institute &mdash; Indian Chapter</p>
-          <p class="text">Regular writing on macroeconomic trends, policy analysis and structural shifts in the Indian economy, published through the Edunomix Institute&rsquo;s Indian Chapter.</p>
-          <a class="read-more" href="https://www.linkedin.com/in/ishaan-harish-511b70273/" target="_blank" rel="noopener">Read on LinkedIn &rarr;</a>
-        </div>
-      </div>
-
-      <div class="entry">
-        <div class="entry-date">In progress<br>With ISBF</div>
-        <div>
-          <h2>Black Swan Events &amp; Their Economic Consequences</h2>
-          <p class="entry-org">In collaboration with a professor at ISBF</p>
-          <p class="text">Examining how extreme, low-probability events propagate through financial systems &mdash; and which frameworks exist, or fail, to anticipate them.</p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <figure class="plate">
-  <div class="plate-frame">
-    <svg class="plate-art" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="An open journal with a page turning, symbols drifting up from the text.">
-  <rect width="400" height="260" fill="#e7dcbe"/>
-  <ellipse cx="200" cy="228" rx="150" ry="14" fill="#cbbc94" opacity="0.55"/>
-  <path d="M40 200 C110 178 170 178 200 194 C230 178 290 178 360 200 L360 214 C290 194 230 194 200 210 C170 194 110 194 40 214 Z" fill="#b9a878" stroke="#2a2418" stroke-width="2.2"/>
-  <path d="M48 194 C112 174 170 174 198 190 L198 84 C170 68 112 68 48 88 Z" fill="#f6efdc" stroke="#2a2418" stroke-width="2.2"/>
-  <path d="M352 194 C288 174 230 174 202 190 L202 84 C230 68 288 68 352 88 Z" fill="#f6efdc" stroke="#2a2418" stroke-width="2.2"/>
-  <g stroke="#7a6d4c" stroke-width="2" stroke-linecap="round" opacity="0.75">
-    <path d="M66 106 h108 M66 122 h108 M66 138 h84 M66 154 h100 M66 170 h62"/>
-    <path d="M226 106 h108 M226 122 h84 M226 138 h108 M226 154 h70"/>
-  </g>
-  <g class="a-page"><path d="M202 84 C230 68 288 68 352 88 L352 194 C288 174 230 174 202 190 Z" fill="#fbf6e6" stroke="#2a2418" stroke-width="2"/>
-    <g stroke="#8a7c58" stroke-width="2" stroke-linecap="round" opacity="0.6"><path d="M226 108 h100 M226 126 h78 M226 144 h96"/></g>
-  </g>
-  <line x1="200" y1="82" x2="200" y2="192" stroke="#2a2418" stroke-width="2.4"/>
-  <g fill="#4a4030" font-family="Georgia, serif" font-size="21" opacity="0.7">
-    <text class="a-float"   x="98"  y="62">&#8721;</text>
-    <text class="a-float-2" x="196" y="46">&#960;</text>
-    <text class="a-float"   x="286" y="58">&#8747;</text>
-  </g>
-</svg>
-    <span class="plate-grain" aria-hidden="true"></span>
-  </div>
-  <figcaption class="plate-caption"><b>In Print</b> &mdash; Five mechanisms, one journal, two hundred and fifty submissions. The page still turns.</figcaption>
-</figure>
-    </div>
-  </div>
-
-
-<nav class="turn-page"><a href="awards.html">&larr; Awards & Honours</a><a href="projects.html">The Project Log &rarr;</a></nav>
-
-  <footer class="colophon">
-    <p>&copy; 2026 Ishaan Harish &mdash; set in New Delhi</p>
-    <nav>
-      <a href="https://www.linkedin.com/in/ishaan-harish-511b70273/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/Ishaan3H" target="_blank" rel="noopener">GitHub</a>
-      <a href="mailto:ishaanharish3@gmail.com">Email</a>
-    </nav>
-  </footer>
-</main>
-
-<script src="assets/paper.js"></script>
+<script src="assets/nav.js"></script>
 </body>
 </html>
