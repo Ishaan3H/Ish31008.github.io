@@ -4,795 +4,149 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ishaan Harish</title>
+<meta name="description" content="Who is writing, and why.">
 <link rel="icon" type="image/png" href="images/favicon.png">
-<style>
-  :root {
-    --navy: #0d1f35;
-    --navy-light: #152a42;
-    --cream: #f5f0e8;
-    --cream-dim: #d9d2c4;
-    --beige: #c8bfa8;
-    --beige-dim: #8a8070;
-    --text: #ede8df;
-    --text-muted: #9fa8a0;
-    --border: rgba(200,191,168,0.18);
-    --border-hover: rgba(200,191,168,0.4);
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  body {
-    background: var(--navy);
-    color: var(--text);
-    font-family: 'Georgia', serif;
-    line-height: 1.7;
-    height: 100vh;
-    overflow: hidden;
-  }
-
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(13,31,53,0.97);
-    border-bottom: 1px solid var(--border);
-    padding: 0 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 58px;
-  }
-
-  .nav-logo {
-    font-family: 'Georgia', serif;
-    font-size: 0.95rem;
-    color: var(--cream);
-    letter-spacing: 0.1em;
-    text-decoration: none;
-    opacity: 0.9;
-    cursor: pointer;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 1.8rem;
-    list-style: none;
-  }
-
-  .nav-links button {
-    background: none;
-    border: none;
-    color: var(--beige-dim);
-    font-family: 'Courier New', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: color 0.2s;
-    padding: 0;
-  }
-
-  .nav-links button:hover,
-  .nav-links button.active { color: var(--cream); }
-
-  /* PAGES */
-  .pages {
-    position: fixed;
-    top: 58px; left: 0; right: 0; bottom: 0;
-    overflow: hidden;
-  }
-
-  .page {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    overflow-y: auto;
-    padding: 60px 2.5rem 60px;
-    max-width: 860px;
-    margin: 0 auto;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(16px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-
-  .page.active {
-    opacity: 1;
-    pointer-events: all;
-    transform: translateY(0);
-  }
-
-  /* make sure page fills full width for centering */
-  .page-wrap {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    overflow-y: auto;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(16px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-
-  .page-wrap.active {
-    opacity: 1;
-    pointer-events: all;
-    transform: translateY(0);
-  }
-
-  .page-inner {
-    max-width: 860px;
-    margin: 0 auto;
-    padding: 60px 2.5rem 80px;
-  }
-
-  /* TYPOGRAPHY */
-  .section-label {
-    font-family: 'Courier New', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--beige-dim);
-    margin-bottom: 1rem;
-  }
-
-  h1 {
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    font-weight: normal;
-    line-height: 1.35;
-    color: var(--cream);
-    margin-bottom: 1.4rem;
-    letter-spacing: 0.01em;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-    font-weight: normal;
-    color: var(--cream);
-    margin-bottom: 2rem;
-    padding-bottom: 0.7rem;
-    border-bottom: 1px solid var(--border);
-    letter-spacing: 0.02em;
-  }
-
-  h3 {
-    font-size: 0.98rem;
-    color: var(--cream-dim);
-    font-weight: normal;
-    margin-bottom: 0.28rem;
-    letter-spacing: 0.02em;
-  }
-
-  p { color: var(--text-muted); font-size: 0.93rem; }
-
-  .divider {
-    width: 36px;
-    height: 1px;
-    background: var(--beige-dim);
-    margin: 1.3rem 0;
-    opacity: 0.45;
-  }
-
-  /* HOME */
-  #page-home .page-inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: calc(100vh - 58px);
-  }
-
-  .hero-eyebrow {
-    font-family: 'Courier New', monospace;
-    font-size: 0.7rem;
-    color: var(--beige-dim);
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin-bottom: 1.8rem;
-  }
-
-  .hero-bio {
-    font-size: 0.98rem;
-    color: var(--text-muted);
-    max-width: 560px;
-    margin-bottom: 2.2rem;
-    line-height: 1.85;
-  }
-
-  .hero-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 2.2rem;
-  }
-
-  .tag {
-    font-family: 'Courier New', monospace;
-    font-size: 0.68rem;
-    padding: 0.22rem 0.7rem;
-    border: 1px solid var(--border);
-    color: var(--beige-dim);
-    letter-spacing: 0.06em;
-  }
-
-  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-  .btn {
-    font-family: 'Courier New', monospace;
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 0.6rem 1.4rem;
-    text-decoration: none;
-    transition: all 0.2s;
-    cursor: pointer;
-    border: none;
-    display: inline-block;
-  }
-
-  .btn-cream { background: var(--cream); color: var(--navy); }
-  .btn-cream:hover { background: var(--cream-dim); }
-  .btn-outline { background: transparent; border: 1px solid var(--border-hover); color: var(--beige); }
-  .btn-outline:hover { border-color: var(--cream-dim); color: var(--cream); }
-
-  /* EXPERIENCE */
-  .exp-item {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 1.5rem;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .exp-item:last-child { border-bottom: none; }
-
-  .exp-date {
-    font-family: 'Courier New', monospace;
-    font-size: 0.68rem;
-    color: var(--beige-dim);
-    opacity: 0.8;
-    padding-top: 0.1rem;
-  }
-
-  .exp-org {
-    font-family: 'Courier New', monospace;
-    font-size: 0.68rem;
-    color: var(--beige-dim);
-    margin-bottom: 0.5rem;
-    opacity: 0.7;
-  }
-
-  .exp-desc { font-size: 0.86rem; color: var(--text-muted); line-height: 1.75; }
-
-  /* AWARDS */
-  .awards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1rem;
-  }
-
-  .award-card {
-    background: var(--navy-light);
-    border: 1px solid var(--border);
-    padding: 1.2rem 1.3rem;
-    transition: border-color 0.2s;
-  }
-
-  .award-card:hover { border-color: var(--border-hover); }
-  .award-icon { font-size: 1rem; margin-bottom: 0.55rem; opacity: 0.8; }
-
-  .award-title {
-    font-size: 0.86rem;
-    color: var(--cream-dim);
-    margin-bottom: 0.35rem;
-    line-height: 1.4;
-  }
-
-  .award-desc { font-size: 0.76rem; color: var(--text-muted); line-height: 1.6; opacity: 0.8; }
-
-  /* RESEARCH */
-  .research-card {
-    background: var(--navy-light);
-    border: 1px solid var(--border);
-    padding: 1.4rem 1.5rem;
-    margin-bottom: 1rem;
-    transition: border-color 0.2s;
-  }
-
-  .research-card:hover { border-color: var(--border-hover); }
-
-  .research-meta {
-    font-family: 'Courier New', monospace;
-    font-size: 0.65rem;
-    color: var(--beige-dim);
-    letter-spacing: 0.1em;
-    margin-bottom: 0.5rem;
-    opacity: 0.7;
-  }
-
-  .research-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.75; margin-top: 0.4rem; }
-
-  .research-link {
-    display: inline-block;
-    margin-top: 0.8rem;
-    font-family: 'Courier New', monospace;
-    font-size: 0.7rem;
-    color: var(--beige);
-    text-decoration: none;
-    letter-spacing: 0.08em;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 1px;
-    transition: border-color 0.2s, color 0.2s;
-  }
-
-  .research-link:hover { border-color: var(--beige); color: var(--cream); }
-
-  /* PROJECTS */
-  .project-status {
-    display: inline-block;
-    font-family: 'Courier New', monospace;
-    font-size: 0.63rem;
-    padding: 0.16rem 0.52rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 0.65rem;
-    border: 1px solid;
-  }
-
-  .status-planned { color: var(--beige-dim); border-color: rgba(138,128,112,0.3); }
-  .status-active { color: #7ec8a4; border-color: rgba(126,200,164,0.3); }
-  .status-done { color: var(--beige-dim); border-color: rgba(138,128,112,0.2); opacity: 0.7; }
-
-  .project-card {
-    background: var(--navy-light);
-    border: 1px solid var(--border);
-    padding: 1.2rem 1.4rem;
-    margin-bottom: 0.9rem;
-    transition: border-color 0.2s;
-  }
-
-  .project-card:hover { border-color: var(--border-hover); }
-  .project-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.75; margin-top: 0.22rem; }
-
-  /* READING */
-  .reading-grid {
-    display: grid;
-    gap: 0.9rem;
-    margin-bottom: 2rem;
-  }
-
-  .book-card {
-    background: var(--navy-light);
-    border: 1px solid var(--border);
-    padding: 1.1rem 1.3rem;
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    transition: border-color 0.2s;
-  }
-
-  .book-card:hover { border-color: var(--border-hover); }
-  .book-card.current { border-color: var(--border-hover); }
-
-  .book-spine {
-    width: 38px;
-    min-width: 38px;
-    height: 56px;
-    background: var(--beige-dim);
-    opacity: 0.65;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .book-spine.current-spine { opacity: 0.85; }
-
-  .book-spine-text {
-    font-family: 'Courier New', monospace;
-    font-size: 0.45rem;
-    color: var(--navy);
-    font-weight: bold;
-    writing-mode: vertical-rl;
-    letter-spacing: 0.04em;
-    overflow: hidden;
-    max-height: 50px;
-    text-align: center;
-  }
-
-  .book-status {
-    font-family: 'Courier New', monospace;
-    font-size: 0.62rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    margin-bottom: 0.25rem;
-  }
-
-  .book-status.reading { color: #7ec8a4; }
-  .book-status.planned { color: var(--beige-dim); opacity: 0.7; }
-
-  .book-title { font-size: 0.94rem; color: var(--cream-dim); margin-bottom: 0.12rem; }
-
-  .book-author {
-    font-family: 'Courier New', monospace;
-    font-size: 0.68rem;
-    color: var(--text-muted);
-    margin-bottom: 0.4rem;
-    opacity: 0.7;
-  }
-
-  .book-why { font-size: 0.82rem; color: var(--text-muted); font-style: italic; line-height: 1.6; opacity: 0.85; }
-
-  .suggest-box {
-    background: var(--navy-light);
-    border: 1px solid var(--border);
-    padding: 1.4rem 1.5rem;
-    margin-top: 0.5rem;
-  }
-
-  .suggest-title {
-    font-family: 'Courier New', monospace;
-    font-size: 0.68rem;
-    color: var(--beige-dim);
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    margin-bottom: 0.35rem;
-  }
-
-  .suggest-desc { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1rem; opacity: 0.85; }
-  .suggest-form { display: flex; flex-direction: column; gap: 0.6rem; }
-
-  .suggest-form input,
-  .suggest-form textarea {
-    background: var(--navy);
-    border: 1px solid var(--border);
-    padding: 0.52rem 0.75rem;
-    color: var(--text);
-    font-family: 'Courier New', monospace;
-    font-size: 0.76rem;
-    outline: none;
-    transition: border-color 0.2s;
-    resize: none;
-  }
-
-  .suggest-form input:focus,
-  .suggest-form textarea:focus { border-color: var(--border-hover); }
-  .suggest-form input::placeholder,
-  .suggest-form textarea::placeholder { color: var(--text-muted); opacity: 0.45; }
-
-  .form-row { display: flex; gap: 0.6rem; }
-  .form-row input { flex: 1; }
-
-  /* FOOTER inside page */
-  .page-footer {
-    margin-top: 3rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-
-  .footer-copy {
-    font-family: 'Courier New', monospace;
-    font-size: 0.62rem;
-    color: var(--text-muted);
-    opacity: 0.4;
-  }
-
-  .footer-links { display: flex; gap: 1.5rem; }
-
-  .footer-links a {
-    font-family: 'Courier New', monospace;
-    font-size: 0.68rem;
-    color: var(--beige-dim);
-    text-decoration: none;
-    letter-spacing: 0.08em;
-    transition: color 0.2s;
-  }
-
-  .footer-links a:hover { color: var(--cream); }
-
-  @media (max-width: 640px) {
-    nav { padding: 0 1rem; }
-    .nav-links { gap: 0.9rem; }
-    .nav-links button { font-size: 0.6rem; }
-    .page-inner { padding: 40px 1.2rem 60px; }
-    .exp-item { grid-template-columns: 1fr; gap: 0.2rem; }
-    .book-card { flex-direction: column; }
-    .form-row { flex-direction: column; }
-    h1 { font-size: 1.8rem; }
-  }
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Spectral:ital,wght@0,300;0,400;0,600;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-<nav>
-  <span class="nav-logo" onclick="showPage('home')">Ishaan Harish</span>
-  <ul class="nav-links">
-    <li><button onclick="showPage('experience')" id="nav-experience">Experience</button></li>
-    <li><button onclick="showPage('awards')" id="nav-awards">Awards</button></li>
-    <li><button onclick="showPage('research')" id="nav-research">Research</button></li>
-    <li><button onclick="showPage('projects')" id="nav-projects">Projects</button></li>
-    <li><button onclick="showPage('reading')" id="nav-reading">Reading</button></li>
-  </ul>
-</nav>
+<header class="topbar">
+  <button class="burger" id="burger" aria-expanded="false" aria-controls="nav-panel" aria-label="Open index">
+    <span></span><span></span><span></span>
+  </button>
+  <span class="topbar-label">Front Page</span>
+  <span class="topbar-home">Latest edition</span>
+</header>
 
-<div class="pages">
-
-  <!-- HOME -->
-  <div class="page-wrap active" id="page-home">
-    <div class="page-inner">
-      <p class="hero-eyebrow">New Delhi, India &nbsp;&mdash;&nbsp; Class of 2026</p>
-      <h1>Started with economics.<br>Drawn, increasingly, to mathematics.</h1>
-      <div class="divider"></div>
-      <p class="hero-bio">
-        I came to economics through writing and research — drawn to the way it explains decisions, institutions, and the structure of societies. But the deeper I went, the more I found myself pulled toward the rigour of mathematics and the precision of quantitative thinking. I am now building, slowly and deliberately, toward the intersection of mathematics, economics, and data.
-      </p>
-      <div class="hero-tags">
-        <span class="tag">Quantitative Finance</span>
-        <span class="tag">Economics Research</span>
-        <span class="tag">Mathematical Reasoning</span>
-        <span class="tag">Data & Policy</span>
-        <span class="tag">Web Development</span>
-      </div>
-      <div class="hero-ctas">
-        <a href="https://www.linkedin.com/in/ishaan-harish-511b70273/" target="_blank" class="btn btn-cream">LinkedIn</a>
-        <button onclick="showPage('research')" class="btn btn-outline">View Research</button>
-      </div>
-    </div>
+<div class="nav-panel" id="nav-panel">
+  <div class="nav-inner">
+    <p class="nav-heading">Index &mdash; In this edition</p>
+    <ul class="nav-list">
+      <li><a href="index.html" aria-current="page"><span class="nav-num">Page One</span><span class="nav-title">The Front Page</span><span class="nav-dots"></span><span class="nav-note">The lead story</span></a></li>
+      <li><a href="experience.html"><span class="nav-num">Page Two</span><span class="nav-title">Experience</span><span class="nav-dots"></span><span class="nav-note">Where it happened</span></a></li>
+      <li><a href="awards.html"><span class="nav-num">Page Three</span><span class="nav-title">Awards & Honours</span><span class="nav-dots"></span><span class="nav-note">For the record</span></a></li>
+      <li><a href="research.html"><span class="nav-num">Page Four</span><span class="nav-title">Research & Writing</span><span class="nav-dots"></span><span class="nav-note">In print</span></a></li>
+      <li><a href="projects.html"><span class="nav-num">Page Five</span><span class="nav-title">The Project Log</span><span class="nav-dots"></span><span class="nav-note">Running &amp; queued</span></a></li>
+      <li><a href="reading.html"><span class="nav-num">Page Six</span><span class="nav-title">The Reading Room</span><span class="nav-dots"></span><span class="nav-note">Currently on the desk</span></a></li>
+    </ul>
   </div>
-
-  <!-- EXPERIENCE -->
-  <div class="page-wrap" id="page-experience">
-    <div class="page-inner">
-      <p class="section-label">// 02. Experience</p>
-      <h2>Where I've worked</h2>
-
-      <div class="exp-item">
-        <div class="exp-date">Jun 2025<br>1 month</div>
-        <div>
-          <h3>Quantitative Analysis Intern</h3>
-          <p class="exp-org">Ministry of Skill Development & Entrepreneurship, Govt. of India</p>
-          <p class="exp-desc">Focused on the data-driven side of national policy. Statistically tracked government scheme performance metrics, helping evaluate the real-world efficacy of large-scale public initiatives across India.</p>
-        </div>
-      </div>
-
-      <div class="exp-item">
-        <div class="exp-date">Feb 2024<br>Present</div>
-        <div>
-          <h3>Economics Researcher</h3>
-          <p class="exp-org">Edunomix Institute &mdash; Remote</p>
-          <p class="exp-desc">Writing articles on the Indian economy and serving as a member of the Indian Chapter. Hosted a national-level economics essay competition with participants from over 19 states.</p>
-        </div>
-      </div>
-
-      <div class="exp-item">
-        <div class="exp-date">Sep 2023<br>Mar 2026</div>
-        <div>
-          <h3>Core Member, Econocrats</h3>
-          <p class="exp-org">Delhi Public School, R.K. Puram</p>
-          <p class="exp-desc">Participated in inter-school economics competitions, helped organise club events, and contributed to the editing and compilation of the annual economics magazine.</p>
-        </div>
-      </div>
-
-      <div class="page-footer">
-        <p class="footer-copy">&copy; 2026 Ishaan Harish</p>
-        <div class="footer-links">
-          <a href="https://linkedin.com/in/ishaanharish" target="_blank">LinkedIn</a>
-          <a href="mailto:ishaanharish3@gmail.com">Email</a>
-          <a href="https://github.com/Ish31008" target="_blank">GitHub</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- AWARDS -->
-  <div class="page-wrap" id="page-awards">
-    <div class="page-inner">
-      <p class="section-label">// 03. Awards</p>
-      <h2>Honours & recognition</h2>
-      <div class="awards-grid">
-        <div class="award-card">
-          <div class="award-icon">&#127942;</div>
-          <p class="award-title">National Startup Weekend &mdash; 1st Place</p>
-          <p class="award-desc">Master's Union &bull; Nov 2023. First place in a national-level team startup competition.</p>
-        </div>
-        <div class="award-card">
-          <div class="award-icon">&#9992;</div>
-          <p class="award-title">Volatus Celestecon &mdash; 2nd Place</p>
-          <p class="award-desc">Aeross, DPS R.K. Puram &bull; Nov 2024. National aerospace competition.</p>
-        </div>
-        <div class="award-card">
-          <div class="award-icon">&#128221;</div>
-          <p class="award-title">Published in IIM Rohtak &mdash; Top 7/250</p>
-          <p class="award-desc">Finance article selected in Arbitrage journal. Ranked top 7 out of 250 submissions.</p>
-        </div>
-        <div class="award-card">
-          <div class="award-icon">&#127979;</div>
-          <p class="award-title">Boston University &mdash; Selected Top 5/400</p>
-          <p class="award-desc">Nationally selected among top 5 out of 400 applicants for BU Summer School.</p>
-        </div>
-      </div>
-
-      <div class="page-footer">
-        <p class="footer-copy">&copy; 2026 Ishaan Harish</p>
-        <div class="footer-links">
-          <a href="https://linkedin.com/in/ishaanharish" target="_blank">LinkedIn</a>
-          <a href="mailto:ishaanharish3@gmail.com">Email</a>
-          <a href="https://github.com/Ish31008" target="_blank">GitHub</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- RESEARCH -->
-  <div class="page-wrap" id="page-research">
-    <div class="page-inner">
-      <p class="section-label">// 04. Research & Writing</p>
-      <h2>Published work</h2>
-
-      <div class="research-card">
-        <p class="research-meta">IIM Rohtak &mdash; Arbitrage Finance Journal &mdash; Top 7 / 250</p>
-        <h3>The Role of Economics in Global Dynamics</h3>
-        <p class="research-desc">An exploration of how economics shapes decisions and societies in a globally connected world. Examines five key mechanisms through which economic forces drive outcomes across policy, behaviour, and institutions.</p>
-        <a href="#" class="research-link">View publication &rarr;</a>
-      </div>
-
-      <div class="research-card">
-        <p class="research-meta">Edunomix Institute &mdash; Ongoing</p>
-        <h3>Articles on the Indian Economy</h3>
-        <p class="research-desc">Regular writing on macroeconomic trends, policy analysis, and structural shifts in the Indian economy, published through the Edunomix Institute's Indian Chapter.</p>
-        <a href="https://linkedin.com/in/ishaanharish" class="research-link">View on LinkedIn &rarr;</a>
-      </div>
-
-      <div class="page-footer">
-        <p class="footer-copy">&copy; 2026 Ishaan Harish</p>
-        <div class="footer-links">
-          <a href="https://linkedin.com/in/ishaanharish" target="_blank">LinkedIn</a>
-          <a href="mailto:ishaanharish3@gmail.com">Email</a>
-          <a href="https://github.com/Ish31008" target="_blank">GitHub</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PROJECTS -->
-  <div class="page-wrap" id="page-projects">
-    <div class="page-inner">
-      <p class="section-label">// 05. Project Log</p>
-      <h2>What I'm building</h2>
-
-      <div class="project-card">
-        <span class="project-status status-active">Active</span>
-        <h3>This website</h3>
-        <p class="project-desc">Building my personal portfolio from scratch, currently learning HTML, CSS, JavaScript, and Ruby through The Odin Project curriculum — working toward being able to build full, functional web projects independently.</p>
-      </div>
-      
-      <div class="project-card">
-        <span class="project-status status-active">Active</span>
-        <h3>Reckon</h3>
-        <p class="project-desc">Developing an advanced screen time monitoring application rooted in behavioral microeconomics and neuroscience, leveraging habit formation mechanics to systematically optimize focus and eliminate digital friction.
-        <a href="https://reckon-theta.vercel.app" style="color: white;" target="_blank" rel="noopener noreferrer">Prototype</a>
-        </p>
-      </div>
-
-      <div class="project-card">
-        <span class="project-status status-planned">Planned</span>
-        <h3>Monte Carlo Simulation and its Applications</h3>
-        <p class="project-desc">An exploration of Monte Carlo methods with a focus on their applications in finance and economics — including risk modelling, asset pricing, and stochastic forecasting. Aimed at building both theoretical understanding and a working implementation.</p>
-      </div>
-
-      <div class="project-card">
-        <span class="project-status status-planned">Planned</span>
-        <h3>Black Swan Events &mdash; Research Paper</h3>
-        <p class="project-desc">A research paper on black swan events and their economic consequences, being developed in collaboration with a professor at ISBF. Examining how extreme, low-probability events propagate through financial systems and what frameworks exist — or fail — to anticipate them.</p>
-      </div>
-
-      <div class="page-footer">
-        <p class="footer-copy">&copy; 2026 Ishaan Harish</p>
-        <div class="footer-links">
-          <a href="https://linkedin.com/in/ishaanharish" target="_blank">LinkedIn</a>
-          <a href="mailto:ishaanharish3@gmail.com">Email</a>
-          <a href="https://github.com/Ish31008" target="_blank">GitHub</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- READING -->
-  <div class="page-wrap" id="page-reading">
-    <div class="page-inner">
-      <p class="section-label">// 06. Reading Log</p>
-      <h2>What's on my desk</h2>
-
-      <div class="reading-grid">
-
-        <div class="book-card current">
-          <div class="book-spine current-spine">
-            <span class="book-spine-text">Leonardo da Vinci</span>
-          </div>
-          <div>
-            <p class="book-status reading">Currently reading</p>
-            <p class="book-title">Leonardo da Vinci</p>
-            <p class="book-author">Walter Isaacson</p>
-            <p class="book-why"><em>Why I'm reading it:</em> Da Vinci's obsessive curiosity across disciplines — art, anatomy, engineering, mathematics — feels like the original blueprint for thinking across fields. I want to understand what that kind of mind actually looked like up close.</p>
-          </div>
-        </div>
-
-        <div class="book-card">
-          <div class="book-spine">
-            <span class="book-spine-text">Execution</span>
-          </div>
-          <div>
-            <p class="book-status planned">Reading next</p>
-            <p class="book-title">Execution: The Discipline of Getting Things Done</p>
-            <p class="book-author">Larry Bossidy & Ram Charan</p>
-          </div>
-        </div>
-
-        <div class="book-card">
-          <div class="book-spine">
-            <span class="book-spine-text">Changing World Order</span>
-          </div>
-          <div>
-            <p class="book-status planned">On the list</p>
-            <p class="book-title">The Changing World Order</p>
-            <p class="book-author">Ray Dalio</p>
-          </div>
-        </div>
-
-        <div class="book-card">
-          <div class="book-spine">
-            <span class="book-spine-text">Probability</span>
-          </div>
-          <div>
-            <p class="book-status planned">On the list</p>
-            <p class="book-title">Introduction to Probability</p>
-            <p class="book-author">Dimitri P. Bertsekas & John N. Tsitsiklis</p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="suggest-box">
-        <p class="suggest-title">Suggest a book</p>
-        <p class="suggest-desc">Reading something I should know about? Drop it below — I read every suggestion.</p>
-        <form class="suggest-form" action="https://formsubmit.co/ishaanharish3@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="Book suggestion for Ishaan">
-          <input type="hidden" name="_captcha" value="false">
-          <div class="form-row">
-            <input type="text" name="book" placeholder="Book title" required>
-            <input type="text" name="author" placeholder="Author" required>
-          </div>
-          <input type="text" name="your_name" placeholder="Your name (optional)">
-          <textarea name="reason" rows="2" placeholder="Why should I read it? (optional)"></textarea>
-          <button type="submit" class="btn btn-outline" style="align-self: flex-start; margin-top: 0.2rem;">Submit suggestion &rarr;</button>
-        </form>
-      </div>
-
-      <div class="page-footer">
-        <p class="footer-copy">&copy; 2026 Ishaan Harish</p>
-        <div class="footer-links">
-          <a href="https://linkedin.com/in/ishaanharish" target="_blank">LinkedIn</a>
-          <a href="mailto:ishaanharish3@gmail.com">Email</a>
-          <a href="https://github.com/Ish31008" target="_blank">GitHub</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
 </div>
 
-<script>
-  function showPage(id) {
-    document.querySelectorAll('.page-wrap').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.nav-links button').forEach(b => b.classList.remove('active'));
-    document.getElementById('page-' + id).classList.add('active');
-    const btn = document.getElementById('nav-' + id);
-    if (btn) btn.classList.add('active');
-  }
-</script>
+<main class="wrap">
+  <div class="masthead">
+    <div class="masthead-rule-top"></div>
+    <p class="paper-name">Ishaan Harish</p>
+    <p class="masthead-motto">&ldquo;Started with economics. Drawn, increasingly, to mathematics.&rdquo;</p>
+    <div class="dateline">
+      <span>Vol. I &mdash; No. 1</span>
+      <span>New Delhi, India</span>
+      <span id="today">Class of 2026</span>
+      <span>Price: Free</span>
+    </div>
+  </div>
 
+  <div class="lead">
+    <div>
+      <p class="lead-kicker">From the Front Page</p>
+      <h2 class="headline">A student of economics keeps wandering into the mathematics department</h2>
+      <p class="subhead">What began as writing and research has turned, steadily, into a case for rigour &mdash; and a slow build toward the place where mathematics, economics and data meet.</p>
+      <p class="byline">By Ishaan Harish &mdash; New Delhi</p>
+      <div class="body-copy">
+        <p class="dropcap">I came to economics through writing and research &mdash; drawn to the way it explains decisions, institutions, and the structure of societies. It was, at first, a discipline of arguments: why people choose what they choose, and why systems hold or fail.</p>
+        <p>But the deeper I went, the more I found myself pulled toward the rigour of mathematics and the precision of quantitative thinking. The arguments were more convincing when they could be measured, and more honest when they could be wrong.</p>
+        <p>I am now building, slowly and deliberately, toward the intersection of mathematics, economics and data &mdash; through research, through code, and through a reading list that keeps growing faster than I can finish it.</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-solid" href="research.html">Read the research</a>
+        <a class="btn" href="https://www.linkedin.com/in/ishaan-harish-511b70273/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div>
+      <figure class="plate">
+  <div class="plate-frame">
+    <svg class="plate-art" viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A writing desk at night: a candle burns, a quill moves across a sheet of paper.">
+  <defs>
+    <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cfc29c"/><stop offset="1" stop-color="#e9dfc2"/></linearGradient>
+    <clipPath id="winclip"><rect x="240" y="28" width="126" height="90"/></clipPath>
+  </defs>
+  <rect width="400" height="260" fill="#e5dabd"/>
+  <rect x="240" y="28" width="126" height="90" fill="url(#sky1)"/>
+  <g clip-path="url(#winclip)">
+    <circle cx="338" cy="56" r="13" fill="#f5eed6"/>
+    <g class="a-cloud"><ellipse cx="60" cy="58" rx="34" ry="9" fill="#f2e9cf" opacity="0.85"/><ellipse cx="84" cy="52" rx="22" ry="8" fill="#f2e9cf" opacity="0.85"/></g>
+    <g class="a-cloud-2"><ellipse cx="10" cy="92" rx="42" ry="8" fill="#efe4c6" opacity="0.7"/></g>
+  </g>
+  <rect x="240" y="28" width="126" height="90" fill="none" stroke="#2a2418" stroke-width="2.5"/>
+  <line x1="303" y1="28" x2="303" y2="118" stroke="#2a2418" stroke-width="2"/>
+  <line x1="240" y1="73" x2="366" y2="73" stroke="#2a2418" stroke-width="2"/>
+  <rect x="0" y="198" width="400" height="62" fill="#c6b691"/>
+  <line x1="0" y1="198" x2="400" y2="198" stroke="#2a2418" stroke-width="2.5"/>
+  <line x1="0" y1="214" x2="400" y2="214" stroke="#2a2418" stroke-width="0.8" opacity="0.35"/>
+  <g transform="rotate(-2.5 190 180)">
+    <rect x="112" y="150" width="156" height="52" fill="#f8f2e0" stroke="#2a2418" stroke-width="1.6"/>
+    <path class="a-ink" d="M124 164 h44 M124 174 h84 M124 184 h62 M124 194 h30" stroke="#2a2418" stroke-width="1.6" fill="none" stroke-dasharray="120" stroke-dashoffset="120" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(150 96)"><g class="a-quill">
+    <path d="M64 96 L36 30" stroke="#2a2418" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M36 30 C22 6 40 -6 58 2 C50 24 46 30 36 30 Z" fill="#e0d3ae" stroke="#2a2418" stroke-width="1.8"/>
+    <path d="M40 26 L54 8 M42 20 L52 14" stroke="#2a2418" stroke-width="0.9" opacity="0.6"/>
+  </g></g>
+  <path d="M40 198 h44 l-6 -30 h-32 z" fill="#2a2418"/>
+  <ellipse cx="62" cy="168" rx="16" ry="4" fill="#4a4030"/>
+  <ellipse cx="316" cy="198" rx="22" ry="5" fill="#a89468" opacity="0.55"/>
+  <rect x="308" y="146" width="16" height="52" fill="#f2ead4" stroke="#2a2418" stroke-width="1.6"/>
+  <path d="M308 156 h16 M308 172 h16" stroke="#2a2418" stroke-width="0.8" opacity="0.35"/>
+  <g class="a-flame"><path d="M316 122 C326 133 324 146 316 146 C308 146 306 133 316 122 Z" fill="#d9a520" stroke="#2a2418" stroke-width="1.2"/></g>
+  <g class="a-smoke"><path d="M316 120 C310 111 321 105 316 96" stroke="#6b5f45" stroke-width="1.6" fill="none" stroke-linecap="round" opacity="0.6"/></g>
+</svg>
+    <span class="plate-grain" aria-hidden="true"></span>
+  </div>
+  <figcaption class="plate-caption"><b>The Desk</b> &mdash; Most of it happens here &mdash; drafts, notes, and a candle that has seen better nights.</figcaption>
+</figure>
+    </div>
+  </div>
+
+  <div class="rule-thin"></div>
+
+  <div class="grid-2">
+    <div class="notice">
+      <span class="notice-rank">Interests</span>
+      <h3>Quantitative Finance</h3>
+      <p>Pricing, risk and the mathematics underneath both.</p>
+    </div>
+    <div class="notice">
+      <span class="notice-rank">Interests</span>
+      <h3>Economics Research</h3>
+      <p>Writing on the Indian economy, policy and structural change.</p>
+    </div>
+    <div class="notice">
+      <span class="notice-rank">Interests</span>
+      <h3>Mathematical Reasoning</h3>
+      <p>Probability, proof, and the habit of checking the argument.</p>
+    </div>
+    <div class="notice">
+      <span class="notice-rank">Interests</span>
+      <h3>Data &amp; Policy</h3>
+      <p>Measuring whether large public programmes actually work.</p>
+    </div>
+  </div>
+
+
+<nav class="turn-page"><a hidden href="#">&nbsp;</a><a href="experience.html">Experience &rarr;</a></nav>
+
+  <footer class="colophon">
+    <p>&copy; 2026 Ishaan Harish &mdash; set in New Delhi</p>
+    <nav>
+      <a href="https://www.linkedin.com/in/ishaan-harish-511b70273/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Ish31008" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:ishaanharish3@gmail.com">Email</a>
+    </nav>
+  </footer>
+</main>
+
+<script src="assets/paper.js"></script>
 </body>
 </html>
