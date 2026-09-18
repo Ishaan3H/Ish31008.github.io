@@ -3,76 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects — Ishaan Harish</title>
+<title>projects — Ishaan Harish</title>
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" href="index.html">Ishaan Harish</a>
-  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="experience.html">Experience</a></li>
-    <li><a href="awards.html">Awards</a></li>
-    <li><a href="research.html">Research</a></li>
-    <li><a href="projects.html" class="active">Projects</a></li>
-    <li><a href="reading.html">Reading</a></li>
-  </ul>
+  <a href="index.html">home</a>
+  <a href="timeline.html">timeline</a>
+  <a href="projects.html">projects</a>
+  <a href="writing.html">writing</a>
+  <a href="reading.html">reading</a>
 </nav>
 
-<div class="page-inner">
-  <p class="section-label">// 05. Project Log</p>
-  <h2>What I'm building</h2>
+<h1>what am i building?</h1>
 
-  <div class="project-card">
-    <span class="project-status status-active">Shipped</span>
-    <h3>Dynamic Island for macOS &mdash; Native Swift Desktop Application</h3>
-    <p class="project-desc">A native macOS Dynamic Island in Swift (AppKit and SwiftUI, SwiftPM, no Xcode required) that lives in the notch. It shows Spotify's now playing off the app's own broadcast instead of polling, holds a drag-and-drop staging vault, mirrors a real folder on disk through FSEvents so there is never a second copy of the state, and runs an on-device voice assistant that creates calendar events from natural speech or opens an Obsidian vault &mdash; all processed on device.</p>
-    <p class="project-desc">The part I'm most proud of is chasing down a real performance problem. The first version invalidated the entire view tree on every filesystem event, and thumbnails were decoded at full size synchronously on the main thread. I rewrote the observation graph so each view only subscribes to what it reads, moved thumbnail decoding off the main thread with proper downsizing, and pushed file I/O onto background queues &mdash; median CPU under sustained filesystem churn dropped from about 15% to about 4%, roughly 3.7x. The same benchmark later caught a regression where a debounce change that looked like a clean win had silently broken the file listener.</p>
-    <a href="https://github.com/Ishaan3H/dynamic-island-macos" target="_blank" rel="noopener" class="research-link">GitHub &rarr;</a>
-  </div>
+<ul>
+  <li><a href="https://projectfermat.vercel.app" target="_blank" rel="noopener">Project Fermat</a> &mdash; a volunteer initiative teaching olympiad maths to middle schoolers in underserved schools across Delhi NCR. notes and problem sets are released free, so the work reaches students we can't teach in person</li>
 
-  <div class="project-card">
-    <span class="project-status status-active">Shipped</span>
-    <h3>Market-Making Simulator &mdash; Quantitative Finance &amp; Market Microstructure</h3>
-    <p class="project-desc">A Python limit order book simulator built to study market-making, inventory risk, adverse selection and execution. Implements four market-making strategies &mdash; including Avellaneda&ndash;Stoikov and GLFT &mdash; and calibrates fill intensity from simulated order flow rather than assuming model parameters. Multi-regime experiments compare PnL, drawdown, inventory, markout and risk-adjusted returns, with 80 tests covering order-book mechanics, accounting, calibration and closed-form quoting formulas.</p>
-    <a href="https://github.com/Ishaan3H/avellaneda-stoikov-sim" target="_blank" rel="noopener" class="research-link">GitHub &rarr;</a>
-  </div>
+  <li><a href="https://github.com/Ishaan3H/dynamic-island-macos" target="_blank" rel="noopener">dynamic-island-macos</a> &mdash; a native macOS Dynamic Island in Swift that lives in the notch. shows Spotify off the app's own broadcast rather than polling, mirrors a real folder through FSEvents so there's never a second copy of the state, and runs an on-device voice assistant. the part i'm proud of is a performance fix: rewriting the observation graph and moving thumbnail decoding off the main thread took median CPU from about 15% to about 4%</li>
 
-  <div class="project-card">
-    <span class="project-status status-active">Shipped</span>
-    <h3>Monte Carlo Quant Lab &mdash; Quantitative Finance &amp; Risk Simulation</h3>
-    <p class="project-desc">A from-scratch Python framework exploring Monte Carlo methods in quantitative finance, covering option pricing, exotic derivatives, variance reduction and portfolio risk. Implements GBM simulations, Asian option pricing, antithetic variates, Cholesky-based correlated simulations, and VaR/CVaR, with results systematically validated against Black&ndash;Scholes and other closed-form solutions. Built with NumPy, SciPy, Matplotlib and Pytest.</p>
-    <a href="https://github.com/Ishaan3H/monte-carlo-quant-lab" target="_blank" rel="noopener" class="research-link">GitHub &rarr;</a>
-  </div>
+  <li><a href="https://github.com/Ishaan3H/avellaneda-stoikov-sim" target="_blank" rel="noopener">avellaneda-stoikov-sim</a> &mdash; a Python limit order book simulator for studying market making, inventory risk and adverse selection. four strategies including Avellaneda&ndash;Stoikov and GLFT, with fill intensity calibrated from simulated order flow rather than assumed</li>
 
-  <div class="project-card">
-    <span class="project-status status-active">Active</span>
-    <h3>Reckon</h3>
-    <p class="project-desc">A screen time monitoring application rooted in behavioural microeconomics and neuroscience, using habit formation mechanics to optimise focus and cut digital friction.</p>
-    <a href="https://reckon-theta.vercel.app" target="_blank" rel="noopener" class="research-link">Prototype &rarr;</a>
-  </div>
+  <li><a href="https://github.com/Ishaan3H/monte-carlo-quant-lab" target="_blank" rel="noopener">monte-carlo-quant-lab</a> &mdash; Monte Carlo methods in quantitative finance, written from scratch. option pricing, exotics, variance reduction, VaR/CVaR, all checked against Black&ndash;Scholes and other closed forms</li>
 
-  <div class="project-card">
-    <span class="project-status status-active">Active</span>
-    <h3>This website</h3>
-    <p class="project-desc">Built from scratch in plain HTML and CSS, no framework and no build step.</p>
-    <a href="https://github.com/Ishaan3H/Ish31008.github.io" target="_blank" rel="noopener" class="research-link">Source &rarr;</a>
-  </div>
+  <li><a href="https://reckon-theta.vercel.app" target="_blank" rel="noopener">Reckon</a> &mdash; a screen time app built on habit formation mechanics rather than willpower</li>
 
-  <div class="page-footer">
-    <p class="footer-copy">&copy; 2026 Ishaan Harish</p>
-    <div class="footer-links">
-      <a href="https://www.linkedin.com/in/ishaan-harish-511b70273/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:ishaanharish3@gmail.com">Email</a>
-      <a href="https://github.com/Ishaan3H" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </div>
-</div>
+  <li><a href="https://github.com/Ishaan3H/Ish31008.github.io" target="_blank" rel="noopener">this website</a> &mdash; plain HTML and one stylesheet, no framework and no build step</li>
+</ul>
 
-<script src="assets/nav.js"></script>
 </body>
 </html>

@@ -3,105 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reading — Ishaan Harish</title>
+<title>reading — Ishaan Harish</title>
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" href="index.html">Ishaan Harish</a>
-  <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="experience.html">Experience</a></li>
-    <li><a href="awards.html">Awards</a></li>
-    <li><a href="research.html">Research</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="reading.html" class="active">Reading</a></li>
-  </ul>
+  <a href="index.html">home</a>
+  <a href="timeline.html">timeline</a>
+  <a href="projects.html">projects</a>
+  <a href="writing.html">writing</a>
+  <a href="reading.html">reading</a>
 </nav>
 
-<div class="page-inner">
-  <p class="section-label">// 06. Reading Log</p>
-  <h2>What's on my desk</h2>
+<h1>what am i reading?</h1>
 
-  <div class="reading-grid">
+<ul>
+  <li><strong>Leonardo da Vinci</strong>, Walter Isaacson &mdash; currently reading. his curiosity ran across art, anatomy, engineering and mathematics all at once, which feels like the original version of thinking across fields. i wanted to see what that mind actually looked like up close</li>
 
-    <div class="book-card current">
-      <div class="book-spine current-spine">
-        <span class="book-spine-text">Leonardo da Vinci</span>
-      </div>
-      <div>
-        <p class="book-status reading">Currently reading</p>
-        <p class="book-title">Leonardo da Vinci</p>
-        <p class="book-author">Walter Isaacson</p>
-        <p class="book-why"><em>Why I'm reading it:</em> Da Vinci's obsessive curiosity across disciplines &mdash; art, anatomy, engineering, mathematics &mdash; feels like the original blueprint for thinking across fields. I want to understand what that kind of mind actually looked like up close.</p>
-      </div>
-    </div>
+  <li><strong>Execution: The Discipline of Getting Things Done</strong>, Larry Bossidy &amp; Ram Charan &mdash; next</li>
 
-    <div class="book-card">
-      <div class="book-spine">
-        <span class="book-spine-text">Execution</span>
-      </div>
-      <div>
-        <p class="book-status planned">Reading next</p>
-        <p class="book-title">Execution: The Discipline of Getting Things Done</p>
-        <p class="book-author">Larry Bossidy &amp; Ram Charan</p>
-      </div>
-    </div>
+  <li><strong>The Changing World Order</strong>, Ray Dalio &mdash; on the list</li>
 
-    <div class="book-card">
-      <div class="book-spine">
-        <span class="book-spine-text">Changing World Order</span>
-      </div>
-      <div>
-        <p class="book-status planned">On the list</p>
-        <p class="book-title">The Changing World Order</p>
-        <p class="book-author">Ray Dalio</p>
-      </div>
-    </div>
+  <li><strong>Introduction to Probability</strong>, Bertsekas &amp; Tsitsiklis &mdash; on the list</li>
+</ul>
 
-    <div class="book-card">
-      <div class="book-spine">
-        <span class="book-spine-text">Probability</span>
-      </div>
-      <div>
-        <p class="book-status planned">On the list</p>
-        <p class="book-title">Introduction to Probability</p>
-        <p class="book-author">Dimitri P. Bertsekas &amp; John N. Tsitsiklis</p>
-      </div>
-    </div>
+<h2>suggest a book</h2>
 
-  </div>
+<p>Reading something i should know about? send it over &mdash; i read every suggestion.</p>
 
-  <div class="suggest-box">
-    <p class="suggest-title">Suggest a book</p>
-    <p class="suggest-desc">Reading something I should know about? Drop it below &mdash; I read every suggestion.</p>
-    <form class="suggest-form" action="https://formsubmit.co/ishaanharish3@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="Book suggestion for Ishaan">
-      <input type="hidden" name="_captcha" value="false">
-      <div class="form-row">
-        <input type="text" name="book" placeholder="Book title" required>
-        <input type="text" name="author" placeholder="Author" required>
-      </div>
-      <input type="text" name="your_name" placeholder="Your name (optional)">
-      <textarea name="reason" rows="2" placeholder="Why should I read it? (optional)"></textarea>
-      <button type="submit" class="btn btn-outline" style="align-self: flex-start; margin-top: 0.2rem;">Submit suggestion &rarr;</button>
-    </form>
-  </div>
+<form action="https://formsubmit.co/ishaanharish3@gmail.com" method="POST">
+  <input type="hidden" name="_subject" value="Book suggestion for Ishaan">
+  <input type="hidden" name="_captcha" value="false">
+  <p>
+    <input type="text" name="book" placeholder="book" required>
+    <input type="text" name="author" placeholder="author" required>
+    <button type="submit">send</button>
+  </p>
+</form>
 
-  <div class="page-footer">
-    <p class="footer-copy">&copy; 2026 Ishaan Harish</p>
-    <div class="footer-links">
-      <a href="https://www.linkedin.com/in/ishaan-harish-511b70273/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:ishaanharish3@gmail.com">Email</a>
-      <a href="https://github.com/Ishaan3H" target="_blank" rel="noopener">GitHub</a>
-    </div>
-  </div>
-</div>
-
-<script src="assets/nav.js"></script>
 </body>
 </html>
