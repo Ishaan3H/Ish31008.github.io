@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>reading — Ishaan Harish</title>
+<title>reading log — Ishaan Harish</title>
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -17,21 +17,51 @@
   <a href="reading.html">reading</a>
 </nav>
 
-<h1>what am i reading?</h1>
+<h1>reading log</h1>
 
-<ul>
-  <li><strong>Leonardo da Vinci</strong>, Walter Isaacson &mdash; currently reading. his curiosity ran across art, anatomy, engineering and mathematics all at once, which feels like the original version of thinking across fields. i wanted to see what that mind actually looked like up close</li>
+<h2>on my desk</h2>
 
-  <li><strong>Execution: The Discipline of Getting Things Done</strong>, Larry Bossidy &amp; Ram Charan &mdash; next</li>
-
-  <li><strong>The Changing World Order</strong>, Ray Dalio &mdash; on the list</li>
-
-  <li><strong>Introduction to Probability</strong>, Bertsekas &amp; Tsitsiklis &mdash; on the list</li>
+<ul class="log">
+  <li>
+    <span class="status">currently reading</span>
+    <strong>Leonardo da Vinci</strong>, Walter Isaacson<br>
+    <span class="why">his curiosity ran across art, anatomy, engineering and
+    mathematics all at once, which feels like the original version of thinking
+    across fields. i wanted to see what that mind actually looked like up close.</span>
+  </li>
 </ul>
+
+<h2>next</h2>
+
+<ul class="log">
+  <li>
+    <span class="status">reading next</span>
+    <strong>Execution: The Discipline of Getting Things Done</strong>,
+    Larry Bossidy &amp; Ram Charan
+  </li>
+</ul>
+
+<h2>on the list</h2>
+
+<ul class="log">
+  <li>
+    <span class="status">queued</span>
+    <strong>The Changing World Order</strong>, Ray Dalio
+  </li>
+  <li>
+    <span class="status">queued</span>
+    <strong>Introduction to Probability</strong>, Dimitri P. Bertsekas &amp;
+    John N. Tsitsiklis<br>
+    <span class="why">the one i actually need for the maths.</span>
+  </li>
+</ul>
+
+<hr>
 
 <h2>suggest a book</h2>
 
-<p>Reading something i should know about? send it over &mdash; i read every suggestion.</p>
+<p>Reading something i should know about? send it over &mdash; i read every
+suggestion.</p>
 
 <form action="https://formsubmit.co/ishaanharish3@gmail.com" method="POST">
   <input type="hidden" name="_subject" value="Book suggestion for Ishaan">
@@ -39,6 +69,7 @@
   <p>
     <input type="text" name="book" placeholder="book" required>
     <input type="text" name="author" placeholder="author" required>
+    <input type="text" name="why" placeholder="why?">
     <button type="submit">send</button>
   </p>
 </form>
