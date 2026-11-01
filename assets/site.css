@@ -164,6 +164,21 @@ h1 { font-size: 1.35rem; font-weight: 600; margin-bottom: 1.8rem; }
   color: #5c5c5c;
 }
 
+/* --- the easter egg -------------------------------------------------- */
+
+.egg {
+  display: inline-block;
+  margin-top: 3.5rem;
+  line-height: 0;
+  color: #141414;
+  opacity: 0.16;
+  text-decoration: none;
+  transition: opacity 0.25s;
+}
+
+.egg:hover,
+.egg:focus-visible { opacity: 1; outline: none; }
+
 /* --- now playing (a real Spotify embed) ------------------------------- */
 
 .np {
