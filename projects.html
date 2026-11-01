@@ -5,33 +5,62 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>projects — Ishaan Harish</title>
 <link rel="icon" type="image/png" href="images/favicon.png">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 
-<nav>
+<nav class="topnav">
   <a href="index.html">home</a>
+  <a href="reading.html">reading log</a>
+  <span class="here">projects</span>
   <a href="timeline.html">timeline</a>
-  <a href="projects.html">projects</a>
-  <a href="writing.html">writing</a>
-  <a href="reading.html">reading</a>
 </nav>
 
-<h1>what am i building?</h1>
+<main>
 
-<ul>
-  <li><a href="https://projectfermat.vercel.app" target="_blank" rel="noopener">Project Fermat</a> &mdash; a volunteer initiative teaching olympiad maths to middle schoolers in underserved schools across Delhi NCR. notes and problem sets are released free, so the work reaches students we can't teach in person</li>
+  <h1>projects</h1>
 
-  <li><a href="https://github.com/Ishaan3H/dynamic-island-macos" target="_blank" rel="noopener">dynamic-island-macos</a> &mdash; a native macOS Dynamic Island in Swift that lives in the notch. shows Spotify off the app's own broadcast rather than polling, mirrors a real folder through FSEvents so there's never a second copy of the state, and runs an on-device voice assistant. the part i'm proud of is a performance fix: rewriting the observation graph and moving thumbnail decoding off the main thread took median CPU from about 15% to about 4%</li>
+  <div class="entry">
+    <h2><a href="https://github.com/Ishaan3H/monte-carlo-quant-lab" target="_blank" rel="noopener">monte-carlo-quant-lab</a></h2>
+    <p class="meta">Python</p>
+    <p>Monte Carlo simulation applied to quantitative finance: option pricing, exotic
+    options, variance reduction, and portfolio VaR/CVaR &mdash; each validated against a
+    closed-form or analytic answer.</p>
+  </div>
 
-  <li><a href="https://github.com/Ishaan3H/avellaneda-stoikov-sim" target="_blank" rel="noopener">avellaneda-stoikov-sim</a> &mdash; a Python limit order book simulator for studying market making, inventory risk and adverse selection. four strategies including Avellaneda&ndash;Stoikov and GLFT, with fill intensity calibrated from simulated order flow rather than assumed</li>
+  <div class="entry">
+    <h2><a href="https://github.com/Ishaan3H/avellaneda-stoikov-sim" target="_blank" rel="noopener">avellaneda-stoikov-sim</a></h2>
+    <p class="meta">Python</p>
+    <p>Market-making simulator: Avellaneda&ndash;Stoikov and GLFT agents quoting into a toy
+    limit order book, with empirically calibrated fill intensity and an edge/markout PnL
+    decomposition.</p>
+  </div>
 
-  <li><a href="https://github.com/Ishaan3H/monte-carlo-quant-lab" target="_blank" rel="noopener">monte-carlo-quant-lab</a> &mdash; Monte Carlo methods in quantitative finance, written from scratch. option pricing, exotics, variance reduction, VaR/CVaR, all checked against Black&ndash;Scholes and other closed forms</li>
+  <div class="entry">
+    <h2><a href="https://github.com/Ishaan3H/india-sector-screener" target="_blank" rel="noopener">india-sector-screener</a></h2>
+    <p class="meta">HTML</p>
+    <p>Weekly sector screener for the Indian market (NSE/BSE) &mdash; ranks 21 sectors by
+    median constituent return and lists the best shares in each.</p>
+  </div>
 
-  <li><a href="https://reckon-theta.vercel.app" target="_blank" rel="noopener">Reckon</a> &mdash; a screen time app built on habit formation mechanics rather than willpower</li>
+  <div class="entry">
+    <h2><a href="https://github.com/Ishaan3H/nse-cup-screener" target="_blank" rel="noopener">nse-cup-screener</a></h2>
+    <p class="meta">Python</p>
+    <p>Screens all NSE-listed stocks for cup and cup-with-handle patterns on monthly
+    charts, scored 0&ndash;100, with an annotated HTML chart report.</p>
+  </div>
 
-  <li><a href="https://github.com/Ishaan3H/Ish31008.github.io" target="_blank" rel="noopener">this website</a> &mdash; plain HTML and one stylesheet, no framework and no build step</li>
-</ul>
+  <div class="entry">
+    <h2><a href="https://github.com/Ishaan3H/buddyai" target="_blank" rel="noopener">buddyai</a></h2>
+    <p class="meta">JavaScript</p>
+    <p>AI study platform with adaptive pacing and an on-device attention coach.
+    Next.js 15 + Gemini + MediaPipe.</p>
+  </div>
+
+  <p>The two macOS apps live on their own page &mdash;
+  <a href="building.html">what i'm building</a>.</p>
+
+</main>
 
 </body>
 </html>

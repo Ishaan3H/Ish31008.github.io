@@ -6,12 +6,14 @@ Plain static HTML. No framework, no build step, no JavaScript.
 
 ```
 index.html      home
+reading.html    reading log
+projects.html   github repos
 timeline.html   how did my life go?
-projects.html   what am i building
-writing.html    writing + research
-reading.html    books
-assets/style.css   the only stylesheet (~80 lines)
+research.html   research work
+building.html   the two macOS apps
+desk.html       my desk (wip)
+assets/site.css the only stylesheet
 ```
 
-To edit anything, open the `.html` file and change the text. The nav is repeated
-at the top of each page — if you add a page, add the link in all five.
+To edit a page, open its `.html` file and change the text. The nav is repeated
+at the top of each page — if you add a page, add the link in all seven.
