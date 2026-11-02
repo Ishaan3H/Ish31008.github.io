@@ -1,11 +1,11 @@
 /* ishaanharish.me */
 
-/* Space Grotesk, self-hosted. One variable file covers 300-700, so the bold
-   headings and the body text come from the same 22KB download. OFL licensed. */
+/* EB Garamond, self-hosted. One variable file covers 400-800, so the bold
+   headings and the body text come from the same download. OFL licensed. */
 @font-face {
-  font-family: 'Space Grotesk';
-  src: url('fonts/space-grotesk.woff2') format('woff2');
-  font-weight: 300 700;
+  font-family: 'EB Garamond';
+  src: url('fonts/eb-garamond.woff2') format('woff2');
+  font-weight: 400 800;
   font-style: normal;
   font-display: swap;
 }
@@ -16,7 +16,7 @@ body {
   padding: 0;
   background: #fff;
   color: #141414;
-  font: 1.05rem/1.7 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font: 1.15rem/1.65 'EB Garamond', Georgia, 'Times New Roman', Times, serif;
 }
 
 main { max-width: 44rem; margin: 3rem auto 6rem; padding: 0 1.5rem; }
